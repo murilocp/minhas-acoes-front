@@ -10,7 +10,7 @@ export default createGlobalStyle`
   body {
     background: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
-    font-family: ${props => props.theme.font.fontFamily};
+    font-family: 'KoHo', sans-serif;
     font-weight: ${props => props.theme.font.fontWeight};
     font-size: ${props => props.theme.font.fontSize};
   }

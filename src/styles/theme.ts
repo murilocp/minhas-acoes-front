@@ -2,10 +2,10 @@ const theme = {
   colors: {
     background: '#FFF',
     text: '#000',
-    primary: '#1492D0',
+    primary: '#3da5a5',
   },
   font: {
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'KoHo, sans-serif',
     fontWeight: 400,
     fontSize: '16px',
   },

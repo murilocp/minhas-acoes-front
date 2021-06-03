@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import HeaderLogo from '../assets/logo.svg';
+import HeaderLogo from '../assets/logo.png';
 
 interface SEOProps {
   title: string;
@@ -20,7 +20,7 @@ export default function SEO({
   url = '',
 }: SEOProps) {
   const pageTitle = `${title} ${
-    !shouldExcludeTitleSuffix ? '| Camille Holmer' : ''
+    !shouldExcludeTitleSuffix ? '| Minhas Ações' : ''
   }`;
 
   const pageUrl = `http://localhost:3000/${url}`;

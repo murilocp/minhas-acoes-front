@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import Logo from '../assets/logo.svg';
+import axios from 'axios';
 import SEO from '../components/SEO';
 
+import { Container } from '../styles/pages/Home';
+
+import Logo from '../assets/logo.png';
+
 const Home: React.FC = () => {
+  useEffect(() => {
+    async function init() {
+      try {
+        const response = await axios.get(
+          'http://localhost:5000/Integ/Importante'
+        );
+
+        console.log(response);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+    init();
+  }, []);
   return (
-    <div>
+    <Container>
       <SEO title="Home" />
-      <Logo />
-      <h1>Site Boilerplate</h1>
-    </div>
+      <div className="content">
+        <div className="logo">
+          <img src={Logo} />
+        </div>
+        <div className="search-input">
+          <input />
+        </div>
+      </div>
+    </Container>
   );
 };
 
