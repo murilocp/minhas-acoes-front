@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import HeaderLogo from '../assets/logo.png';
+import HeaderLogo from '../assets/signin-bg.png';
 
 interface SEOProps {
   title: string;
@@ -23,7 +23,7 @@ export default function SEO({
     !shouldExcludeTitleSuffix ? '| Minhas Ações' : ''
   }`;
 
-  const pageUrl = `http://localhost:3000/${url}`;
+  const pageUrl = `https://minhasacoes.com.br`;
 
   return (
     <Head>
@@ -35,7 +35,7 @@ export default function SEO({
       <meta name="image" content={image} />
       <meta name="description" content={description} />
           
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="all" />
           
       <meta name="author" content="Autor" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
