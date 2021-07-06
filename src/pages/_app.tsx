@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
+
+import { ChakraProvider } from '@chakra-ui/react';
 
 import Layout from '../components/_layout/Layout';
 
@@ -8,12 +9,12 @@ import theme from '../styles/theme';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ChakraProvider theme={theme}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
       <GlobalStyles />
-    </ThemeProvider>
+    </ChakraProvider>
   );
 };
 

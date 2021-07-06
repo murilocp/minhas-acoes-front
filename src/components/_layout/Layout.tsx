@@ -6,7 +6,7 @@ import Header from './Header';
 const Layout: React.FC = ({ children }) => {
   return (
     <Container>
-      <Header />
+      {/* <Header /> */}
       {children}
     </Container>
   );

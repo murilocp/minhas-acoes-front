@@ -1,10 +1,10 @@
-import Head from 'next/head';
 import Document, {
   DocumentContext,
   DocumentInitialProps,
   Html,
   NextScript,
   Main,
+  Head,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -42,9 +42,10 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           {/**Google Fonts */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=KoHo:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
           {/** Links para Favicons de todos os navegadores */}
