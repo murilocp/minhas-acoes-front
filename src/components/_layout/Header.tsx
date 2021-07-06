@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Container } from '../../styles/components/Header';
 
-import { Button } from '../Button';
+import { Button } from '@chakra-ui/react';
 
 export default function Header() {
   return (
