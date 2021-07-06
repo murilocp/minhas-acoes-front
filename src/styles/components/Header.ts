@@ -15,9 +15,7 @@ export const Container = styled.div`
     flex: 1;
 
     a {
-      color: ${props => props.theme.colors.primary};
       text-decoration: none;
-
       margin-right: 30px;
     }
 

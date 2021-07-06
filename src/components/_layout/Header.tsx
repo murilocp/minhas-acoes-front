@@ -13,7 +13,7 @@ export default function Header() {
         <Link href="/">
           <a href="/">Entrar</a>
         </Link>
-        <Button>Cadastrar</Button>
+        <Button colorScheme="teal">Cadastrar</Button>
       </div>
     </Container>
   );
