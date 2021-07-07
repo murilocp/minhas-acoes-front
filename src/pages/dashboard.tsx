@@ -10,7 +10,7 @@ export default function Dashboard() {
   return (
     <Flex direction="column" h="100vh">
       <SEO title="Dashboard" />
-      <Flex px="6" py="4" w="100%" maxWidth={1440} mx="auto" bg="white">
+      <Flex px="6" py="4" w="100%" mx="auto" bg="white">
         <Image mr="8" maxW={220} maxH={100} src={Logo} />
 
         <Flex
