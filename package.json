@@ -14,7 +14,7 @@
     "@emotion/styled": "11",
     "axios": "^0.21.1",
     "framer-motion": "4",
-    "next": "10.2.0",
+    "next": "12.1.0",
     "next-images": "^1.7.0",
     "nookies": "^2.5.2",
     "react": "17.0.2",
