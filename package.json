@@ -16,6 +16,7 @@
     "framer-motion": "4",
     "next": "10.2.0",
     "next-images": "^1.7.0",
+    "nookies": "^2.5.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",

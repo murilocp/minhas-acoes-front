@@ -1,3 +1,5 @@
+import { useContext, useState } from 'react';
+
 import {
   Flex,
   Stack,
@@ -8,30 +10,44 @@ import {
   Image,
 } from '@chakra-ui/react';
 
-import SignInBg from '../assets/signin-bg.png';
-import Logo from '../assets/logo.png';
+import { AuthContext } from '../contexts/AuthContext';
+import { Input } from '../components/Form/Input';
 import SEO from '../components/SEO';
 
-import { Input } from '../components/Form/Input';
+import Logo from '../assets/logo.png';
 
 export default function SignIn() {
+  const [loading, setLoading] = useState(false);
+  const { signIn } = useContext(AuthContext);
+
+  const handleSubmit = async e => {
+    setLoading(true);
+    e.preventDefault();
+
+    await signIn({
+      username: e.target.username.value,
+      password: e.target.password.value,
+    });
+
+    setLoading(false);
+  };
+
   return (
-    <Flex h="100vh" w="100%" justify="center" align="center" flexDir="column">
+    <Flex h="100vh" w="100%" justify="center" align="center" marginX="auto">
       <SEO
         title="Login"
         description="Evaluation, múltiplos e os caralho tudo a um clique! Um. Fucking. Click."
       />
 
       <Box
-        bg="white"
-        paddingX={6}
-        paddingY={10}
-        maxW="40%"
-        margin="auto"
-        justify="center"
         align="center"
-        borderRadius={8}
-        boxShadow="lg"
+        alignSelf="center"
+        margin="auto 0"
+        bg="white"
+        maxW="650px"
+        boxShadow={'xl'}
+        paddingX={{ base: 4, lg: 6 }}
+        paddingY={{ base: 6, lg: 12 }}
       >
         <Image
           src={Logo}
@@ -41,12 +57,20 @@ export default function SignIn() {
           maxW={384}
           maxH={100}
         />
-        <Stack spacing={4} as="form" w="75%">
+
+        <Stack
+          paddingX={{ base: 2, sm: 4 }}
+          spacing={4}
+          as="form"
+          onSubmit={handleSubmit}
+          maxWidth={500}
+        >
           <Heading as="h2" size="lg">
             Acesse sua conta
           </Heading>
+
           <Input
-            name="email"
+            name="username"
             label="E-mail"
             type="email"
             required
@@ -67,30 +91,25 @@ export default function SignIn() {
               </div>
             }
           />
+          <Button
+            bg="teal.300"
+            type="submit"
+            mt="8"
+            colorScheme="teal"
+            w="100%"
+            isLoading={loading}
+          >
+            Entrar
+          </Button>
+          <div>
+            Ainda não tem conta? Clique{' '}
+            <Link isExternal href="/" color="teal.300">
+              aqui
+            </Link>{' '}
+            e cadastre-se agora!
+          </div>
         </Stack>
-        <Button
-          bg="teal.300"
-          type="submit"
-          mt="8"
-          colorScheme="teal"
-          w="100%"
-          maxW="75%"
-        >
-          Entrar
-        </Button>
-        <div>
-          Ainda não tem conta? Clique{' '}
-          <Link isExternal href="/" color="teal.300">
-            aqui
-          </Link>{' '}
-          e cadastre-se agora!
-        </div>
       </Box>
-
-      {/*
-      <Flex maxH="100vh" w="55%">
-        <img src={SignInBg} alt="BackgroundSignIn" />
-      </Flex> */}
     </Flex>
   );
 }

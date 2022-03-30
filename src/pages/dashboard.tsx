@@ -1,10 +1,15 @@
+import { GetServerSideProps } from 'next';
+
+import { parseCookies } from 'nookies';
+
 import { Flex, Image, Input, Icon, Avatar, Text, Box } from '@chakra-ui/react';
 import { RiSearchLine } from 'react-icons/ri';
 
 import { Sidebar } from '../components/Dashboard/Sidebar';
 import DashboardContent from '../components/Dashboard/Content';
-import Logo from '../assets/logo.png';
 import SEO from '../components/SEO';
+
+import Logo from '../assets/logo.png';
 
 export default function Dashboard() {
   return (
@@ -51,3 +56,20 @@ export default function Dashboard() {
     </Flex>
   );
 }
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+  const cookies = parseCookies(ctx);
+
+  if (!cookies['@ma.token']) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
