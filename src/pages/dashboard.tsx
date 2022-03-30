@@ -2,21 +2,19 @@ import { GetServerSideProps } from 'next';
 
 import { parseCookies } from 'nookies';
 
-import { Flex, Image, Input, Icon, Avatar, Text, Box } from '@chakra-ui/react';
+import { Flex, Image, Input, Icon, Avatar, Text } from '@chakra-ui/react';
 import { RiSearchLine } from 'react-icons/ri';
 
 import { Sidebar } from '../components/Dashboard/Sidebar';
 import DashboardContent from '../components/Dashboard/Content';
 import SEO from '../components/SEO';
 
-import Logo from '../assets/logo.png';
-
 export default function Dashboard() {
   return (
     <Flex direction="column" h="100vh">
       <SEO title="Dashboard" />
       <Flex px="6" py="4" w="100%" mx="auto" bg="white">
-        <Image mr="8" maxW={220} maxH={100} src={Logo} />
+        <Image mr="8" maxW={220} maxH={100} src="/assets/logo.png" />
 
         <Flex
           as="label"

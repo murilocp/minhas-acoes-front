@@ -1,7 +1,5 @@
 import Head from 'next/head';
 
-import HeaderLogo from '../assets/signin-bg.png';
-
 interface SEOProps {
   title: string;
   description?: string;
@@ -14,7 +12,7 @@ interface SEOProps {
 export default function SEO({
   title,
   description = 'Descrição padrão',
-  image = HeaderLogo,
+  image = '/assets/signin-bg.png',
   shouldExcludeTitleSuffix = false,
   isArticle = false,
   url = '',

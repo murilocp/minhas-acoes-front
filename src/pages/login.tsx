@@ -14,8 +14,6 @@ import { AuthContext } from '../contexts/AuthContext';
 import { Input } from '../components/Form/Input';
 import SEO from '../components/SEO';
 
-import Logo from '../assets/logo.png';
-
 export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const { signIn } = useContext(AuthContext);
@@ -50,7 +48,7 @@ export default function SignIn() {
         paddingY={{ base: 6, lg: 12 }}
       >
         <Image
-          src={Logo}
+          src="/assets/logo.png"
           alt="Logo Minhas Ações"
           w="100%"
           h="100%"

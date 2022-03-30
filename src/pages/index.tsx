@@ -1,32 +1,10 @@
-import React, { useEffect } from 'react';
-
-import axios from 'axios';
-
 import { Image, Input, Stack } from '@chakra-ui/react';
 
 import SEO from '../components/SEO';
 
 import { Container } from '../styles/pages/Home';
 
-import Logo from '../assets/logo.png';
-
-const Home: React.FC = () => {
-  useEffect(() => {
-    async function init() {
-      try {
-        const response = await axios.get(
-          'http://localhost:5000/Integ/Importante'
-        );
-
-        console.log(response);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-
-    init();
-  }, []);
-
+export default function Home() {
   return (
     <Container>
       <SEO
@@ -35,7 +13,7 @@ const Home: React.FC = () => {
       />
       <Stack h="100%" m="auto" maxWidth="750px" align="center" justify="center">
         <Image
-          src={Logo}
+          src="/assets/logo.png"
           alt="Logo Minhas Ações"
           w="100%"
           h="100%"
@@ -55,6 +33,4 @@ const Home: React.FC = () => {
       </Stack>
     </Container>
   );
-};
-
-export default Home;
+}
